@@ -69,17 +69,17 @@ class BMP085(object):
         self._load_calibration()
 
     def _load_calibration(self):
-        self.cal_AC1 = self._device.readS16BE(BMP085_CAL_AC1)   # INT16
-        self.cal_AC2 = self._device.readS16BE(BMP085_CAL_AC2)   # INT16
-        self.cal_AC3 = self._device.readS16BE(BMP085_CAL_AC3)   # INT16
-        self.cal_AC4 = self._device.readU16BE(BMP085_CAL_AC4)   # UINT16
-        self.cal_AC5 = self._device.readU16BE(BMP085_CAL_AC5)   # UINT16
-        self.cal_AC6 = self._device.readU16BE(BMP085_CAL_AC6)   # UINT16
-        self.cal_B1 = self._device.readS16BE(BMP085_CAL_B1)     # INT16
-        self.cal_B2 = self._device.readS16BE(BMP085_CAL_B2)     # INT16
-        self.cal_MB = self._device.readS16BE(BMP085_CAL_MB)     # INT16
-        self.cal_MC = self._device.readS16BE(BMP085_CAL_MC)     # INT16
-        self.cal_MD = self._device.readS16BE(BMP085_CAL_MD)     # INT16
+        self.cal_AC1 = int(self._device.readS16BE(BMP085_CAL_AC1))   # INT16
+        self.cal_AC2 = int(self._device.readS16BE(BMP085_CAL_AC2))   # INT16
+        self.cal_AC3 = int(self._device.readS16BE(BMP085_CAL_AC3))   # INT16
+        self.cal_AC4 = int(self._device.readU16BE(BMP085_CAL_AC4))   # UINT16
+        self.cal_AC5 = int(self._device.readU16BE(BMP085_CAL_AC5))   # UINT16
+        self.cal_AC6 = int(self._device.readU16BE(BMP085_CAL_AC6))   # UINT16
+        self.cal_B1 = int(self._device.readS16BE(BMP085_CAL_B1))     # INT16
+        self.cal_B2 = int(self._device.readS16BE(BMP085_CAL_B2))     # INT16
+        self.cal_MB = int(self._device.readS16BE(BMP085_CAL_MB))     # INT16
+        self.cal_MC = int(self._device.readS16BE(BMP085_CAL_MC))     # INT16
+        self.cal_MD = int(self._device.readS16BE(BMP085_CAL_MD))     # INT16
         self._logger.debug('AC1 = {0:6d}'.format(self.cal_AC1))
         self._logger.debug('AC2 = {0:6d}'.format(self.cal_AC2))
         self._logger.debug('AC3 = {0:6d}'.format(self.cal_AC3))
